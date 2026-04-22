@@ -62,5 +62,5 @@ public class QuantityMeasurementApp {
         // Different values
         System.out.println("Feet Equal: " + compareFeet(1.0, 2.0));
         System.out.println("Inches Equal: " + compareInches(1.0, 2.0));
-    }
+        System.out.println("UC1 done"); }
 }
