@@ -1,5 +1,3 @@
-import java.util.Objects;
-
 public class QuantityMeasurementApp {
 
     // 🔹 FEET CLASS
@@ -8,6 +6,10 @@ public class QuantityMeasurementApp {
 
         public Feet(double value) {
             this.value = value;
+        }
+
+        public double toInches() {
+            return value * 12;
         }
 
         @Override
@@ -27,6 +29,10 @@ public class QuantityMeasurementApp {
             this.value = value;
         }
 
+        public double toInches() {
+            return value;
+        }
+
         @Override
         public boolean equals(Object obj) {
             if (this == obj) return true;
@@ -36,29 +42,35 @@ public class QuantityMeasurementApp {
         }
     }
 
-    // 🔹 METHOD FOR FEET EQUALITY
-    public static boolean checkFeetEquality(double v1, double v2) {
-        Feet f1 = new Feet(v1);
-        Feet f2 = new Feet(v2);
-        return f1.equals(f2);
+    // 🔹 FEET vs FEET
+    public static boolean compareFeet(double v1, double v2) {
+        return new Feet(v1).equals(new Feet(v2));
     }
 
-    // 🔹 METHOD FOR INCHES EQUALITY
-    public static boolean checkInchesEquality(double v1, double v2) {
-        Inches i1 = new Inches(v1);
-        Inches i2 = new Inches(v2);
-        return i1.equals(i2);
+    // 🔹 INCHES vs INCHES
+    public static boolean compareInches(double v1, double v2) {
+        return new Inches(v1).equals(new Inches(v2));
     }
 
-    // 🔹 MAIN METHOD (TESTING)
+    // 🔹 FEET vs INCHES (IMPORTANT UC2 PART)
+    public static boolean compareFeetAndInches(double feet, double inches) {
+        Feet f = new Feet(feet);
+        Inches i = new Inches(inches);
+
+        return Double.compare(f.toInches(), i.toInches()) == 0;
+    }
+
+    // 🔹 MAIN METHOD
     public static void main(String[] args) {
 
-        // UC1: Feet equality
-        System.out.println("Feet Equal (1.0, 1.0): " + checkFeetEquality(1.0, 1.0));
-        System.out.println("Feet Equal (1.0, 2.0): " + checkFeetEquality(1.0, 2.0));
+        // UC1
+        System.out.println("Feet Equal (1.0, 1.0): " + compareFeet(1.0, 1.0));
 
-        // UC2: Inches equality
-        System.out.println("Inches Equal (1.0, 1.0): " + checkInchesEquality(1.0, 1.0));
-        System.out.println("Inches Equal (1.0, 2.0): " + checkInchesEquality(1.0, 2.0));
+        // UC2
+        System.out.println("Inches Equal (1.0, 1.0): " + compareInches(1.0, 1.0));
+
+        // CROSS COMPARISON (VERY IMPORTANT)
+        System.out.println("1 ft == 12 inches: " + compareFeetAndInches(1.0, 12.0));
+        System.out.println("1 ft == 10 inches: " + compareFeetAndInches(1.0, 10.0));
     }
 }
