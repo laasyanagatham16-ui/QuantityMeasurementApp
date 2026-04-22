@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3efdd04e-8fc4-4c8a-8208-5e8f3e0a5802" name="Changes" comment="" />
+    <list default="true" id="3efdd04e-8fc4-4c8a-8208-5e8f3e0a5802" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/QuantityMeasurementApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuantityMeasurementApp.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,7 +36,7 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "feature/UC3-GenericQuantity",
     "kotlin-language-version-configured": "true",
     "onboarding.tips.debug.path": "C:/Users/laasy/OneDrive/Desktop/STEP_RA2411003011154/QuantityMeasurementApp/src/Main.java"
   }
